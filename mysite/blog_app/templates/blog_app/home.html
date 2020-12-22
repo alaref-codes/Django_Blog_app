@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>HOME - BLOG </title>
-</head>
-<body>
-    <h1>Welcome the the BLOG app</h1>
-</body>
-</html>
+{% extends 'blog_app/base.html' %}
+{% block content %}
+     {% for post in posts %}
+        <h2>{{post.title}}</h2>
+        <h5>by {{post.author}} on {{post.published}}</h5>
+        <p>{{post.content}}</p>
+    {% endfor %}
+{% endblock content %}
