@@ -1,8 +1,14 @@
 {% extends 'blog_app/base.html' %}
 {% block content %}
-     {% for post in posts %}
-        <h2>{{post.title}}</h2>
+    <h2 style="color: darkblue">Latest Blogs</h2>
+    <br><br>
+    {% for post in posts %}
+        <div class="nice">
+        <h3>{{post.title}}</h3>
         <h5>by {{post.author}} on {{post.published}}</h5>
         <p>{{post.content}}</p>
+        </div>
+        <br><br>
+
     {% endfor %}
 {% endblock content %}
