@@ -3,9 +3,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 
-class UserRegisterFrom(UserCreationForm):
-    email = forms.EmailField()
+class UserRegisterForm(UserCreationForm):
+    email = forms.EmailField() # Required argument defaul to True
 
-    class Meta:
+    class Meta: # The Meta class keep the configuration in one place
         model = User
         fields = ['username','email','password1','password2']
