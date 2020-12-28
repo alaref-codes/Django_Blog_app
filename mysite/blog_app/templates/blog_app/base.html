@@ -26,10 +26,25 @@
   <li class="nav-item">
     <a class="nav-link active" aria-current="page" href=" {% url 'blog_app:blog-about' %}">About</a>
   </li>
-  <ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href=" {% url 'blog_users:blog-register' %}">Register</a>
-  </li>
+  {% if user.is_authenticated %}
+    <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href=" {% url 'blog_users:blog-logout' %}">Logout</a>
+    </li>
+    <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href=" {% url 'blog_users:blog-profile' %}">Profile</a>
+    </li>
+  {% else %}
+    <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href=" {% url 'blog_users:blog-register' %}">Register</a>
+    </li>
+    <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href=" {% url 'blog_users:blog-login' %}">Login</a>
+    </li>
+  {% endif %}
   </div>
     <br>
     <div class="container">
