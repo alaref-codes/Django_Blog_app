@@ -6,6 +6,12 @@
             <img class="rounded-circle" src="{{ object.author.profile.image.url }}">
             <h3>{{object.title}}</h3>
             <h5 style="color: blue">by {{object.author}} on {{object.pub_date|date:"F d, Y"}}</h5>
+            {% if object.author == user %}
+                <div>
+                    <a class="btn btn-secondary"  href="{% url  'blog_app:blog-update'  object.id %}">Update</a>
+                    <a class="btn btn-danger" href="{% url  'blog_app:blog-delete'  object.id %}">Delete</a>
+                </div>
+            {% endif %}
             <p>{{object.content}}</p>
         </div>
         <br><br>
