@@ -5,7 +5,7 @@
     {% for post in posts %}
         <div class="nice">
             <img class="rounded-circle" src="{{ post.author.profile.image.url }}">
-            <h3>{{post.title}}</h3>
+            <h3><a href="{% url 'blog_app:blog-detail' post.id  %}">{{post.title}}</a></h3>
             <h5 style="color: blue">by {{post.author}} on {{post.pub_date|date:"F d, Y"}}</h5>
             <p>{{post.content}}</p>
         </div>
