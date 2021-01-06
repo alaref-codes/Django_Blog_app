@@ -1,5 +1,6 @@
 {% extends 'blog_app/base.html' %}
 {% block content %}
+    <h1 class="mb-3" >Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }}) </h1>
     <h2 style="color: darkblue">Latest Blogs</h2>
     <br><br>
     {% for post in posts %}
@@ -7,7 +8,7 @@
             <img class="rounded-circle" src="{{ post.author.profile.image.url }}">
             <h3><a href="{% url 'blog_app:blog-detail' post.id  %}">{{post.title}}</a></h3>
             <a href="{% url 'blog_app:user-post' post.author.username %}">by {{post.author}}</a>
-            <h5 style="color: blue">on {{post.pub_date|date:"F d, Y"}}</h5>
+            <h5 style="color: blue">{{post.pub_date|date:"F d, Y"}}</h5>
             <p>{{post.content}}</p>
         </div>
         <br><br>
