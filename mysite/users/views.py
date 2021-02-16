@@ -14,11 +14,12 @@ def register(request):
             return redirect('blog_users:blog-login')
     else:
         form = UserRegisterForm()
+	# we can see how little it does when its a get method
+	# it creates an empty form with no data
 
     context = {
         'form' : form,
     }
-
     return render(request,'users/register.html',context)
 
 @login_required

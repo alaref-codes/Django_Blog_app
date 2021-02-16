@@ -1,3 +1,6 @@
+# This file should be created when you want to override the basic
+# fields that UserCreationForm build for so YOU CAN ADD YOUR OWN FILEDS
+
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User

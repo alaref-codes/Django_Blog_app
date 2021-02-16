@@ -125,8 +125,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_ROOT =  os.path.join(BASE_DIR, 'media') # This is where the uploaded file will be stored And BASEDIR  means the the media folder is in
+
+MEDIA_URL = '/media/' # The publid url and this is how we can access the pictures in the broweser
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -138,5 +139,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "alarefabushaala@gmail.com"
-EMAIL_HOST_PASSWORD = "2212444af"
+EMAIL_HOST_USER = os.environ.get('EMAIL')
+EMAIL_HOST_PASSWORD = os.environ.get('PASSWORD')
